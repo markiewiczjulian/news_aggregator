@@ -1,5 +1,5 @@
 # news_aggregator
-News aggregator in angular6.
+News aggregator in angular6. Based on requests made to a google news api (https://newsapi.org/s/google-news-api).
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.9.
 
