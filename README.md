@@ -3,6 +3,12 @@ News aggregator in angular2. Based on requests made to a google news api (https:
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.9.
 
+## Preparation
+User should (before serving an application) run `npm install` command which will install all missing dependencies.
+
+## Running application
+When inside a project folder user can type `ng serve --open` (`--open` flag should open a browser with proper address, but if this will not work, an address is displayed in terminal when running ng serve right at the beginning).
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
