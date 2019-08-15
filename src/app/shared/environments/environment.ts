@@ -8,7 +8,9 @@ export const environment = {
   newsApiUrl: 'https://newsapi.org/v2',
   newsHeaders: { 'Content-Type': 'application/json' },
   facesApiUrl: 'https://uifaces.co/api',
-  facesHeaders: { 'X-API-KEY': '2c079e5ebf89c5b6e69077d65dda79' }
+  facesHeaders: { 'X-API-KEY': '2c079e5ebf89c5b6e69077d65dda79' },
+  weatherToken: 'de653cd0b10647b3b0ce2a9f507c9716',
+  weatherApiUrl: 'https://api.weatherbit.io/v2.0/current'
 };
 
 /*

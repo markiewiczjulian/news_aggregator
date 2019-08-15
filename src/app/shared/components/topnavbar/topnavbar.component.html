@@ -1,19 +1,48 @@
-<mat-toolbar color="primary">
-  <mat-toolbar-row class="d-flex justify-content-between">
-    <span>Third Line</span>
-    <div>
-      <mat-icon
-        class="example-icon mr-3"
-        aria-hidden="false"
-        aria-label="Example heart icon"
-        >favorite</mat-icon
-      >
-      <mat-icon
-        class="example-icon mr-3"
-        aria-hidden="false"
-        aria-label="Example delete icon"
-        >delete</mat-icon
-      >
-    </div>
-  </mat-toolbar-row>
-</mat-toolbar>
+<nav class="navbar navbar-dark bg-dark navbar-expand-md">
+  <a class="navbar-brand" routerLink="/">
+    <i class="fas fa-glasses fa-2x"></i>
+  </a>
+  <button
+    #navbarToggler
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    (click)="isShown = !isShown"
+    [attr.aria-expanded]="isShown"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div
+    class="collapse navbar-collapse justify-content-end flex-grow-1 text-right"
+    id="navbarSupportedContent"
+    [ngClass]="{ show: isShown }"
+    id="navbarSupportedContent"
+  >
+    <ul class="navbar-nav flex-nowrap">
+      <li class="nav-item">
+        <a routerLink="/" class="nav-link" routerLinkActive="router-link-active"
+          >top news <span class="sr-only">(current)</span></a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          routerLink="/sources"
+          class="nav-link"
+          routerLinkActive="router-link-active"
+          >sources</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          routerLink="/about"
+          class="nav-link"
+          routerLinkActive="router-link-active"
+          >about</a
+        >
+      </li>
+    </ul>
+  </div>
+</nav>

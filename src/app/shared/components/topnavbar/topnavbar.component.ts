@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopnavbarComponent implements OnInit {
 
+  isShown = false;
+
   constructor() { }
 
   ngOnInit() {

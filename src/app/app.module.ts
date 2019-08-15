@@ -17,6 +17,7 @@ import { TopNewsComponent } from './top-news-component/top-news-component';
 import { ErrorComponent } from './error-component/error-component';
 import { TopnavbarComponent } from './shared/components/topnavbar/topnavbar.component';
 import { SidenavbarComponent } from './shared/components/sidenavbar/sidenavbar.component';
+import { WeatherWindowComponent } from './shared/components/weather-window/weather-window.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { SidenavbarComponent } from './shared/components/sidenavbar/sidenavbar.c
     TopNewsComponent,
     ErrorComponent,
     SidenavbarComponent,
-    TopnavbarComponent
+    TopnavbarComponent,
+    WeatherWindowComponent
   ],
   imports: [
     BrowserModule,

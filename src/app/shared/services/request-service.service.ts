@@ -12,6 +12,8 @@ export class RequestService {
   private newsHeaders = environment.newsHeaders;
   private facesApiUrl = environment.facesApiUrl;
   private facesHeaders = environment.facesHeaders;
+  private weatherApiUrl = environment.weatherApiUrl;
+  private weatherToken = environment.weatherToken;
 
   public getNewsHeaders() {
     return this.newsHeaders;
@@ -31,6 +33,14 @@ export class RequestService {
 
   public getFacesApiUrl() {
     return this.facesApiUrl;
+  }
+
+  public getWeatherApiUrl() {
+    return this.weatherApiUrl;
+  }
+
+  public getWeatherToken() {
+    return this.weatherToken;
   }
 
   constructor() { }

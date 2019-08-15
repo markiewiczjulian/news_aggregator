@@ -1,0 +1,16 @@
+.rotate-45-left:before {
+  -o-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.rotate-45-right:before {
+  -o-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.weatherSign {
+  height: 15px;
+  width: 15px;
+}

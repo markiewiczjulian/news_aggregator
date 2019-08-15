@@ -1,25 +1,24 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { RequestService } from './request-service.service';
-import { Face } from '../models/face';
-import { Observable, throwError } from 'rxjs';
-import { map, catchError } from 'rxjs/operators';
+import { catchError } from 'rxjs/operators';
+import { throwError, Observable } from 'rxjs';
+import { Weather } from '../models/weather';
+import { RequestService } from '../services/request-service.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class UiFacesService {
+export class WeatherService {
 
-  url = this.requestService.getFacesApiUrl();
-  headers = this.requestService.getFacesHeaders();
+  url = this.requestService.getWeatherApiUrl();
+  token = this.requestService.getWeatherToken();
 
   constructor(private httpClient: HttpClient, private requestService: RequestService) { }
 
 
-  public getAll(amount?: number, emotion?: string): Observable<Face[]> {
+  public getAll(): Observable<Weather> {
     return this.httpClient
-      .get<Face[]>(`${this.url}${amount || emotion ? '?' : ''}${amount ? 'limit=' + amount : ''}
-      ${emotion && amount ? '&emotion[]=' + emotion : ''}`, { headers: this.headers })
+      .get<Weather>(`${this.url}$?city=Warsaw&key=${this.token}`)
       .pipe(
         catchError(this.handleError)
       );

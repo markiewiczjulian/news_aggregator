@@ -1,26 +1,36 @@
-<div class="d-flex flex-wrap mx-1 mx-md-2 mx-lg-5 my-5">
+<app-weather-window></app-weather-window>
+<div class="d-flex flex-wrap mx-1 mx-md-2 mx-lg-5 my-2">
   <div
     *ngFor="let article of articles; let i = index"
     class="col-12 col-md-6 col-xl-4 my-3"
   >
-    <div class="card shadow">
+    <div class="card shadow bg-light">
       <img
+        *ngIf="article?.urlToImage; else imgPlaceholder"
         class="card-img-top"
-        src="{{ article.urlToImage }}"
-        alt="no image available"
+        src="{{ article?.urlToImage }}"
+        alt="article image"
       />
+      <ng-template #imgPlaceholder>
+        <div class="bg-secondary card-img-top">
+          <h3 class="text-white">
+            no image availaable
+          </h3>
+        </div>
+      </ng-template>
       <div class="card-body">
-        <h5 *ngIf="article?.title; else elseBlock" class="card-title">
+        <h5 *ngIf="article?.title; else noTitle" class="card-title">
           {{
             article?.title?.length > 60
               ? (article?.title | slice: 0:60) + "..."
               : article?.title
           }}
         </h5>
-        <ng-template #elseBlock class="card-title">
+        <ng-template #noTitle class="card-title">
           no title available
         </ng-template>
-        <p class="card-text">
+        <hr />
+        <p class="card-text text-secondary">
           {{
             article?.content
               ? (article?.content | slice: 0:250) + "..."
