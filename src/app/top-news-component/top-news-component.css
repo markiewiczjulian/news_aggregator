@@ -1,0 +1,13 @@
+.card {
+  height: 700px;
+}
+.card-img-top {
+  height: 250px;
+}
+.author-picture {
+  height: 50px;
+  width: 50px;
+}
+.blockquote-footer::before {
+  content: none;
+}

@@ -1,3 +1,59 @@
-<p>
-  top-news-component works!
-</p>
+<div class="d-flex flex-wrap mx-1 mx-md-2 mx-lg-5 my-5">
+  <div
+    *ngFor="let article of articles; let i = index"
+    class="col-12 col-md-6 col-xl-4 my-3"
+  >
+    <div class="card shadow">
+      <img
+        class="card-img-top"
+        src="{{ article.urlToImage }}"
+        alt="no image available"
+      />
+      <div class="card-body">
+        <h5 *ngIf="article?.title; else elseBlock" class="card-title">
+          {{
+            article?.title?.length > 60
+              ? (article?.title | slice: 0:60) + "..."
+              : article?.title
+          }}
+        </h5>
+        <ng-template #elseBlock class="card-title">
+          no title available
+        </ng-template>
+        <p class="card-text">
+          {{
+            article?.content
+              ? (article?.content | slice: 0:250) + "..."
+              : "no content available"
+          }}
+        </p>
+      </div>
+      <footer class="blockquote-footer mb-3 mx-4">
+        <img
+          *ngIf="faces"
+          class="rounded-circle author-picture shadow"
+          src="{{ faces[i].photo }}"
+        />
+        {{ article?.author ? article.author : "no author available"
+        }}<br /><cite title="Source Title"
+          >{{
+            article?.source?.name
+              ? article.source.name
+              : "no article source available"
+          }}<br />
+          {{
+            article?.publishedAt
+              ? (article.publishedAt | slice: 0:10)
+              : "no publishing date available"
+          }}</cite
+        >
+        <button
+          class="btn btn-info float-right shadow"
+          (click)="redirectToArticle(article.url)"
+        >
+          read more
+        </button>
+      </footer>
+    </div>
+  </div>
+</div>
