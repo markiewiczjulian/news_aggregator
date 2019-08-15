@@ -1,7 +1,13 @@
 # news_aggregator
-News aggregator in angular6. Based on requests made to a google news api (https://newsapi.org/s/google-news-api).
+News aggregator in angular2. Based on requests made to a google news api (https://newsapi.org/s/google-news-api).
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.9.
+
+## Preparation
+User should (before serving an application) run `npm install` command which will install all missing dependencies.
+
+## Running application
+When inside a project folder user can type `ng serve --open` (`--open` flag should open a browser with proper address, but if this will not work, an address is displayed in terminal when running ng serve right at the beginning).
 
 ## Development server
 
