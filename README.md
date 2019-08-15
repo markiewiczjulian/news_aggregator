@@ -1,10 +1,14 @@
 # news_aggregator
-News aggregator in angular2. Based on requests made to a google news api (https://newsapi.org/s/google-news-api).
+News aggregator in angular2. Based on requests made to a google news API (https://newsapi.org/s/google-news-api) and also UIFaces (https://uifaces.co/api-docs).
+
+Google news API provides actual news from all around the world.
+UIFaces API is a service that provides user avatars (service is used in application to mock real author of an article photo).
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.9.
 
 ## Preparation
-User should (before serving an application) run `npm install` command which will install all missing dependencies.
+User should generate API key for UIFaces service (https://uifaces.co/api-docs) and also for google news API service (https://newsapi.org/s/google-news-api). Generated keys should be placed inside environment.ts file (/YOUR_PROJECT_MAIN_FOLDER/src/app/shared/environments/environment.ts).
+Before serving an application in a main folder user should run `npm install` command, which will install all missing dependencies.
 
 ## Running application
 When inside a project folder user can type `ng serve --open` (`--open` flag should open a browser with proper address, but if this will not work, an address is displayed in terminal when running ng serve right at the beginning).
