@@ -4,11 +4,11 @@
 
 export const environment = {
   production: false,
-  newsToken: '4df24a1de4b94f07b9c9e0968b23fb07',
+  newsToken: 'GOOGLE_NEWS_API_KEY',
   newsApiUrl: 'https://newsapi.org/v2',
   newsHeaders: { 'Content-Type': 'application/json' },
   facesApiUrl: 'https://uifaces.co/api',
-  facesHeaders: { 'X-API-KEY': '2c079e5ebf89c5b6e69077d65dda79' }
+  facesHeaders: { 'X-API-KEY': 'UI_FACES_API_KEY' }
 };
 
 /*
