@@ -1,3 +1,31 @@
-<p>
-  sources-component works!
-</p>
+<div class="mx-1 mx-md-3 mx-lg-5 px-5 my-4">
+  <table *ngIf="sources" class="table table-hover">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>name</th>
+        <th>description</th>
+        <th>category</th>
+        <th>language</th>
+        <th>official website</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let source of sources; let i = index">
+      <tr>
+        <td>{{ i + 1 }}</td>
+        <td>{{ source.name }}</td>
+        <td>{{ source.description }}</td>
+        <td>{{ source.category }}</td>
+        <td>{{ source.language }}</td>
+        <td>
+          <button
+            class="btn btn-info"
+            (click)="redirectToSourceSite(source.url)"
+          >
+            website
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { Source } from '../shared/models/source';
+import { HttpClient } from '@angular/common/http';
+import { SourceNewsService } from '../shared/services/source-news.service';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-sources-component',
@@ -7,9 +11,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SourcesComponent implements OnInit {
 
-  constructor() { }
+  sources: Source[];
+
+  constructor(private http: HttpClient, private sourceNewsService: SourceNewsService,
+    @Inject(DOCUMENT) private document: any) { }
 
   ngOnInit() {
+    this.getAllSources();
   }
 
+  getAllSources() {
+    this.sourceNewsService.getAll().subscribe(data => {
+      this.sources = data;
+    },
+      (err: string) => {
+        alert(err);
+      });
+  }
+
+  redirectToSourceSite(url) {
+    this.document.location.href = url;
+  }
 }

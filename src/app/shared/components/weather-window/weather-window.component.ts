@@ -32,23 +32,23 @@ export class WeatherWindowComponent implements OnInit {
 
   windDirectionParse(windDir) {
     if (windDir === 'N') {
-      this.windDirectionParsed = 'fa-arrow-top';
+      this.windDirectionParsed = '-up';
     } else if (windDir === 'E') {
-      this.windDirectionParsed = 'right';
+      this.windDirectionParsed = '-right';
     } else if (windDir === 'W') {
-      this.windDirectionParsed = 'left';
+      this.windDirectionParsed = '-left';
     } else if (windDir === 'S') {
-      this.windDirectionParsed = 'down';
+      this.windDirectionParsed = '-down';
     } else if (windDir === 'SSE' || windDir === 'ESE' || windDir === 'SE') {
-      this.windDirectionParsed = 'down rotate-45-left';
+      this.windDirectionParsed = '-down rotate-45-left';
     } else if (windDir === 'NNE' || windDir === 'NE' || windDir === 'ENE') {
-      this.windDirectionParsed = 'up rotate-45-right';
+      this.windDirectionParsed = '-up rotate-45-right';
     } else if (windDir === 'NNW' || windDir === 'NW' || windDir === 'WNW') {
-      this.windDirectionParsed = 'up rotate-45-left';
+      this.windDirectionParsed = '-up rotate-45-left';
     } else if (windDir === 'SSW' || windDir === 'SW' || windDir === 'WSW') {
-      this.windDirectionParsed = 'fa-arrow-down rotate-45-right';
+      this.windDirectionParsed = '-down rotate-45-right';
     } else {
-      this.windDirectionParsed = 'fa-arrows-alt';
+      this.windDirectionParsed = 's-alt';
     }
   }
 }

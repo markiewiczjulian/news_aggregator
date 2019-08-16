@@ -15,7 +15,7 @@
     <div class="card-text">
       <h2>{{ (weather?.data)[0]?.temp }}&#8451;</h2>
       <h5>
-        Wind <i class="fas fa-arrow-{{ windDirectionParsed }}"></i>
+        Wind <i class="fas fa-arrow{{ windDirectionParsed }}"></i>
         {{ (weather?.data)[0]?.wind_spd }} m/s
       </h5>
       <h5>Humidity {{ (weather?.data)[0]?.rh }} %</h5>

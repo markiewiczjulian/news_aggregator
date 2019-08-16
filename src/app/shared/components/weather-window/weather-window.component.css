@@ -2,12 +2,14 @@
   -o-transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
+  display: inline-block;
 }
 
 .rotate-45-right:before {
   -o-transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
+  display: inline-block;
 }
 
 .weatherSign {
