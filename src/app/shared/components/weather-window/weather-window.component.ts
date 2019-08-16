@@ -24,8 +24,6 @@ export class WeatherWindowComponent implements OnInit {
     this.weatherService.getAll().subscribe(data => {
       this.weather = data;
       this.windDirectionParse(this.weather.data[0].wind_cdir);
-      console.log(data)
-      console.log(new Date())
     },
       (err: string) => {
         alert(err);
@@ -45,13 +43,11 @@ export class WeatherWindowComponent implements OnInit {
       this.windDirectionParsed = 'down rotate-45-left';
     } else if (windDir === 'NNE' || windDir === 'NE' || windDir === 'ENE') {
       this.windDirectionParsed = 'up rotate-45-right';
-
     } else if (windDir === 'NNW' || windDir === 'NW' || windDir === 'WNW') {
       this.windDirectionParsed = 'up rotate-45-left';
     } else if (windDir === 'SSW' || windDir === 'SW' || windDir === 'WSW') {
       this.windDirectionParsed = 'fa-arrow-down rotate-45-right';
-    }
-    else {
+    } else {
       this.windDirectionParsed = 'fa-arrows-alt';
     }
   }

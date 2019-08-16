@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  newsToken: 'GOOGLE_NEWS_API_KEY',
+  newsToken: '4df24a1de4b94f07b9c9e0968b23fb07',
   newsApiUrl: 'https://newsapi.org/v2',
   newsHeaders: { 'Content-Type': 'application/json' },
   facesApiUrl: 'https://uifaces.co/api',

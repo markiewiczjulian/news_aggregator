@@ -1,23 +1,24 @@
-<div *ngIf="weather?.data" class="card my-3 mx-5">
+<div *ngIf="weather?.data" class="card my-3 mx-3 mx-md-5">
   <div class="card-body bg-info text-white">
-    <h5 class="card-title">
+    <h5>
       Current weather in {{ (weather?.data)[0]?.city_name }}
       {{ currentDateTime }}
     </h5>
-    <div>
-      <img
-        id="weatherSign"
-        class="float-right mt-1"
-        src="https://www.weatherbit.io/static/img/icons/{{
-          (weather?.data)[0]?.weather?.icon
-        }}.png"
-      />
-    </div>
+    <img
+      id="weatherSign"
+      class="float-right mt-1"
+      src="https://www.weatherbit.io/static/img/icons/{{
+        (weather?.data)[0]?.weather?.icon
+      }}.png"
+    />
 
     <div class="card-text">
       <h2>{{ (weather?.data)[0]?.temp }}&#8451;</h2>
-      <i class="fas fa-wind fa-2x"></i
-      ><i class="fas fa-arrow-{{ windDirectionParsed }} fa-2x"></i>
+      <h5>
+        Wind <i class="fas fa-arrow-{{ windDirectionParsed }}"></i>
+        {{ (weather?.data)[0]?.wind_spd }} m/s
+      </h5>
+      <h5>Humidity {{ (weather?.data)[0]?.rh }} %</h5>
     </div>
   </div>
 </div>

@@ -6,7 +6,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
-import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatRadioModule } from '@angular/material/radio';
 
@@ -16,7 +15,6 @@ import { SourcesComponent } from './sources-component/sources-component';
 import { TopNewsComponent } from './top-news-component/top-news-component';
 import { ErrorComponent } from './error-component/error-component';
 import { TopnavbarComponent } from './shared/components/topnavbar/topnavbar.component';
-import { SidenavbarComponent } from './shared/components/sidenavbar/sidenavbar.component';
 import { WeatherWindowComponent } from './shared/components/weather-window/weather-window.component';
 
 @NgModule({
@@ -26,7 +24,6 @@ import { WeatherWindowComponent } from './shared/components/weather-window/weath
     SourcesComponent,
     TopNewsComponent,
     ErrorComponent,
-    SidenavbarComponent,
     TopnavbarComponent,
     WeatherWindowComponent
   ],
@@ -37,7 +34,6 @@ import { WeatherWindowComponent } from './shared/components/weather-window/weath
     BrowserAnimationsModule,
     MatToolbarModule,
     MatIconModule,
-    MatSidenavModule,
     MatListModule,
     MatRadioModule
   ],

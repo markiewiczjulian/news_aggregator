@@ -1,28 +1,28 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { throwError, Observable } from 'rxjs';
-import { catchError, map } from 'rxjs/operators';
 import { RequestService } from './request-service.service';
-import { Article } from '../models/article';
-import { ArticleResponse } from '../models/articleResponse';
+import { Observable, throwError } from 'rxjs';
+import { Source } from '../models/source';
+import { SourceResponse } from '../models/sourceResponse';
+import { map, catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
-export class TopNewsService {
+export class SourceNewsService {
 
-  endpoint = 'top-headlines';
+  endpoint = 'sources';
   url = this.requestService.getNewsApiUrl();
   newsToken = this.requestService.getNewsToken();
 
   constructor(private httpClient: HttpClient, private requestService: RequestService) { }
 
 
-  public getAll(): Observable<Article[]> {
+  public getAll(): Observable<Source[]> {
     return this.httpClient
-      .get<ArticleResponse>(`${this.url}/${this.endpoint}?country=us&apiKey=${this.newsToken}`)
+      .get<SourceResponse>(`${this.url}/${this.endpoint}?country=us&apiKey=${this.newsToken}`)
       .pipe(
-        map(response => response.articles),
+        map(response => response.sources),
         catchError(this.handleError)
       );
   }
