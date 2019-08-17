@@ -39,4 +39,4 @@ testem.log
 Thumbs.db
 /package-lock.json
 
-src/app/shared/environments/
+src/app/shared/environments/environment.ts
