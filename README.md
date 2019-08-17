@@ -3,8 +3,12 @@ News aggregator in angular2. Based on requests made to a google news API (https:
 
 Google news API provides actual news from all around the world.
 UIFaces API is a service that provides user avatars (service is used in application to mock real author of an article photo).
+WeatherBit API provides actual weather (in application is used on main page in weather-window component).
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.9.
+
+## Screens from application
+![alt text](https://user-images.githubusercontent.com/39520658/63208473-bf80cd80-c0d4-11e9-8e53-1093909fcfab.png)
 
 ## Preparation
 User should generate API key for UIFaces service (https://uifaces.co/api-docs), for google news API service (https://newsapi.org/s/google-news-api) and for WeatherBit API (https://www.weatherbit.io/api). Generated keys should be placed inside environment.ts file (/YOUR_PROJECT_MAIN_FOLDER/src/app/shared/environments/environment.ts).
