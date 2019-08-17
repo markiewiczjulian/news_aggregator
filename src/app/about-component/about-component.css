@@ -1,0 +1,7 @@
+#about-background {
+  background-image: url("../shared/assets/images/about_image.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
