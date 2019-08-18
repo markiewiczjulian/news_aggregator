@@ -9,6 +9,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Screens from application
 ![alt text](https://user-images.githubusercontent.com/39520658/63208473-bf80cd80-c0d4-11e9-8e53-1093909fcfab.png)
+![alt_text](https://user-images.githubusercontent.com/39520658/63227886-d6661380-c1eb-11e9-9df2-f590fa07d441.png)
 
 ## Preparation
 User should generate API key for UIFaces service (https://uifaces.co/api-docs), for google news API service (https://newsapi.org/s/google-news-api) and for WeatherBit API (https://www.weatherbit.io/api). Generated keys should be placed inside environment.ts file (/YOUR_PROJECT_MAIN_FOLDER/src/app/shared/environments/environment.ts) which user should create based on environment-template.ts (present in the same directory).
