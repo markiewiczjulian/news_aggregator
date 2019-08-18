@@ -1,9 +1,9 @@
 # news_aggregator
-News aggregator in angular2. Based on requests made to a google news API (https://newsapi.org/s/google-news-api), UIFaces (https://uifaces.co/api-docs) and WeatherBit (https://www.weatherbit.io/api/weather-current).
+News aggregator in angular2. Based on requests made to a google news API, UIFaces and WeatherBit.
 
-Google news API provides actual news from all around the world.
-UIFaces API is a service that provides user avatars (service is used in application to mock real author of an article photo).
-WeatherBit API provides actual weather (in application is used on main page in weather-window component).
+Google news API (https://newsapi.org/s/google-news-api) provides actual news from all around the world.
+UIFaces API (https://uifaces.co/api-docs) is a service that provides user avatars (service is used in an application to mock a photo of a real author of an article). 
+WeatherBit API (https://www.weatherbit.io/api/weather-current) provides an actual weather (in application is used on the main page in weather-window component).
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.9.
 
@@ -12,7 +12,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Preparation
 User should generate API key for UIFaces service (https://uifaces.co/api-docs), for google news API service (https://newsapi.org/s/google-news-api) and for WeatherBit API (https://www.weatherbit.io/api). Generated keys should be placed inside environment.ts file (/YOUR_PROJECT_MAIN_FOLDER/src/app/shared/environments/environment.ts) which user should create based on environment-template.ts (present in the same directory).
-Before serving an application in a main folder user should run `npm install` command, which will install all missing dependencies.
+Before serving an application in a main folder a user should run `npm install` command, which will install all missing dependencies.
 
 ## Running application
 When inside a project folder user can type `ng serve --open` (`--open` flag should open a browser with proper address, but if this will not work, an address is displayed in terminal when running ng serve right at the beginning).
