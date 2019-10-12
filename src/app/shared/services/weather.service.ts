@@ -16,7 +16,7 @@ export class WeatherService {
   constructor(private httpClient: HttpClient, private requestService: RequestService) { }
 
 
-  public getAll(): Observable<Weather> {
+  public getWeather(): Observable<Weather> {
     return this.httpClient
       .get<Weather>(`${this.url}$?city=Warsaw&key=${this.token}`)
       .pipe(

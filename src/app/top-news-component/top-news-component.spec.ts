@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { WeatherWindowComponent } from '../shared/components/weather-window/weather-window.component';
 import { TopNewsComponent } from './top-news-component';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { HttpClient, HttpHandler } from '@angular/common/http';
+
 
 describe('TopNewsComponent', () => {
   let component: TopNewsComponent;
@@ -8,7 +11,9 @@ describe('TopNewsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [TopNewsComponent]
+      declarations: [TopNewsComponent, WeatherWindowComponent],
+      imports: [],
+      providers: [HttpTestingController, HttpClientTestingModule, HttpClient, HttpHandler]
     })
       .compileComponents();
   }));

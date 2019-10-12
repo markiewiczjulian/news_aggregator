@@ -16,14 +16,14 @@ export class WeatherWindowComponent implements OnInit {
   constructor(private weatherService: WeatherService) { }
 
   ngOnInit() {
-    this.getAllNews();
+    this.getWeather();
     this.currentDateTime = new Date(Date.now()).toDateString();
   }
 
-  getAllNews() {
-    this.weatherService.getAll().subscribe(data => {
+  getWeather() {
+    this.weatherService.getWeather().subscribe(data => {
       this.weather = data;
-      this.windDirectionParse(this.weather.data[0].wind_cdir);
+      this.windDirectionParsed = this.windDirectionParse(this.weather.data[0].wind_cdir);
     },
       (err: string) => {
         alert(err);
@@ -31,24 +31,25 @@ export class WeatherWindowComponent implements OnInit {
   }
 
   windDirectionParse(windDir) {
-    if (windDir === 'N') {
-      this.windDirectionParsed = '-up';
-    } else if (windDir === 'E') {
-      this.windDirectionParsed = '-right';
-    } else if (windDir === 'W') {
-      this.windDirectionParsed = '-left';
-    } else if (windDir === 'S') {
-      this.windDirectionParsed = '-down';
-    } else if (windDir === 'SSE' || windDir === 'ESE' || windDir === 'SE') {
-      this.windDirectionParsed = '-down rotate-45-left';
-    } else if (windDir === 'NNE' || windDir === 'NE' || windDir === 'ENE') {
-      this.windDirectionParsed = '-up rotate-45-right';
-    } else if (windDir === 'NNW' || windDir === 'NW' || windDir === 'WNW') {
-      this.windDirectionParsed = '-up rotate-45-left';
-    } else if (windDir === 'SSW' || windDir === 'SW' || windDir === 'WSW') {
-      this.windDirectionParsed = '-down rotate-45-right';
-    } else {
-      this.windDirectionParsed = 's-alt';
+    switch (windDir) {
+      case 'N':
+        return '-up';
+      case 'E':
+        return '-right';
+      case 'W':
+        return '-left';
+      case 'S':
+        return '-down';
+      case 'SSE': case 'ESE': case 'SE':
+        return '-down rotate-45-left';
+      case 'NNE': case 'NE': case 'ENE':
+        return '-up rotate-45-right';
+      case 'NNW': case 'NW': case 'WNW':
+        return '-up rotate-45-left';
+      case 'SSW': case 'SW': case 'WSW':
+        return '-down rotate-45-right';
+      default:
+        return 's-alt';
     }
   }
 }

@@ -1,4 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { HttpClient, HttpHandler } from '@angular/common/http';
 
 import { SourcesComponent } from './sources-component';
 
@@ -8,7 +10,8 @@ describe('SourcesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [SourcesComponent]
+      declarations: [SourcesComponent],
+      providers: [HttpClientTestingModule, HttpTestingController, HttpClient, HttpHandler]
     })
       .compileComponents();
   }));
