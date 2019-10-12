@@ -1,9 +1,9 @@
 # news_aggregator
 News aggregator in angular2. Based on requests made to a google news API, UIFaces and WeatherBit.
 
-Google news API (https://newsapi.org/s/google-news-api) provides actual news from all around the world.
-UIFaces API (https://uifaces.co/api-docs) is a service that provides user avatars (service is used in an application to mock a photo of a real author of an article). 
-WeatherBit API (https://www.weatherbit.io/api/weather-current) provides an actual weather (in application is used on the main page in weather-window component).
+Google news API (https://newsapi.org/s/google-news-api) provides actual news from all around the world.  
+UIFaces API (https://uifaces.co/api-docs) is a service that provides user avatars (service is used in an application to mock a photo of a real author of an article).   
+WeatherBit API (https://www.weatherbit.io/api/weather-current) provides an actual weather (in application is used on the main page in weather-window component).  
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.9.
 
