@@ -6,7 +6,6 @@ import { environment } from '../environments/environment';
 })
 export class RequestService {
 
-
   private newsApiUrl = environment.newsApiUrl;
   private newsToken = environment.newsToken;
   private newsHeaders = environment.newsHeaders;

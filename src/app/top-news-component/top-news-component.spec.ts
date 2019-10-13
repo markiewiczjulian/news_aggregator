@@ -1,30 +1,34 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { WeatherWindowComponent } from '../shared/components/weather-window/weather-window.component';
 import { TopNewsComponent } from './top-news-component';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { HttpClient, HttpHandler } from '@angular/common/http';
+import { WeatherService } from '../shared/services/weather.service';
+import { TopNewsService } from '../shared/services/top-news.service';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 
 describe('TopNewsComponent', () => {
-  let component: TopNewsComponent;
+  let topNewsComponent: TopNewsComponent;
   let fixture: ComponentFixture<TopNewsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [TopNewsComponent, WeatherWindowComponent],
+      declarations: [TopNewsComponent],
       imports: [],
-      providers: [HttpTestingController, HttpClientTestingModule, HttpClient, HttpHandler]
+      providers: [HttpTestingController, HttpClientTestingModule, HttpClient, HttpHandler, WeatherService, TopNewsService],
+      schemas: [NO_ERRORS_SCHEMA]
     })
       .compileComponents();
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(TopNewsComponent);
-    component = fixture.componentInstance;
+    topNewsComponent = fixture.componentInstance;
+    topNewsComponent.ngOnInit = () => { };
     fixture.detectChanges();
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(topNewsComponent).toBeTruthy();
   });
 });
