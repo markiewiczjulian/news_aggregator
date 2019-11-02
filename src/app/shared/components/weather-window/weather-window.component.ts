@@ -23,10 +23,16 @@ export class WeatherWindowComponent implements OnInit {
   getWeather() {
     this.weatherService.getWeather().subscribe(data => {
       this.weather = data;
-      this.windDirectionParsed = this.windDirectionParse(this.weather.data[0].wind_cdir);
+      if (this.weather) {
+        this.weather.data.forEach(element => {
+          this.windDirectionParsed = this.windDirectionParse(element.wind_cdir);
+        });
+      } else {
+        this.windDirectionParsed = 's-alt';
+      }
     },
       (err: string) => {
-        alert(err);
+        console.error(err);
       });
   }
 

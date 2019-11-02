@@ -17,7 +17,6 @@ export class SourceNewsService {
 
   constructor(private httpClient: HttpClient, private requestService: RequestService) { }
 
-
   public getAll(): Observable<Source[]> {
     return this.httpClient
       .get<SourceResponse>(`${this.url}/${this.endpoint}?country=us&apiKey=${this.newsToken}`)

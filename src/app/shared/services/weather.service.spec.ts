@@ -13,4 +13,17 @@ describe('WeatherService', () => {
     const service: WeatherService = TestBed.get(WeatherService);
     expect(service).toBeTruthy();
   });
+
+  //TODO test method getWeather
+  xit(`method getWeather should call httpClient get method with parameters from
+  environment variables`, () => {
+    const service: WeatherService = TestBed.get(WeatherService);
+    expect(service).toBeTruthy();
+  });
+
+  xit(`method getWeather should in case of error call catchError method from same
+  service`, () => {
+    const service: WeatherService = TestBed.get(WeatherService);
+    expect(service).toBeTruthy();
+  });
 });

@@ -29,7 +29,7 @@ export class TopNewsComponent implements OnInit {
       this.getFaces(this.articles.length);
     },
       (err: string) => {
-        alert(err);
+        console.error(err);
       });
   }
 
@@ -38,7 +38,7 @@ export class TopNewsComponent implements OnInit {
       this.faces = data;
     },
       (err: string) => {
-        alert(err);
+        console.error(err);
       });
   }
 

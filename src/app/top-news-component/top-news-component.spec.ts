@@ -31,4 +31,28 @@ describe('TopNewsComponent', () => {
   it('should create', () => {
     expect(topNewsComponent).toBeTruthy();
   });
+
+  //TODO test method getAllNews, getFaces and redirectToArticle
+  xit(`method getAllNews should call topNewsService and assign retrieved data to
+    articles variable`, () => {
+    const service: TopNewsComponent = TestBed.get(TopNewsComponent);
+    expect(service).toBeTruthy();
+  });
+
+  xit(`method getAllNews should on success call facesService with parameter of
+  articles length`, () => {
+    const service: TopNewsComponent = TestBed.get(TopNewsComponent);
+    expect(service).toBeTruthy();
+  });
+
+  xit(`method getFaces should run with or without any passed parameters and then
+  store result in faces variable `, () => {
+    const service: TopNewsComponent = TestBed.get(TopNewsComponent);
+    expect(service).toBeTruthy();
+  });
+
+  xit(`method redirectToArticle should change location of site to passed url`, () => {
+    const service: TopNewsComponent = TestBed.get(TopNewsComponent);
+    expect(service).toBeTruthy();
+  });
 });

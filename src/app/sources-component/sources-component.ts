@@ -25,7 +25,7 @@ export class SourcesComponent implements OnInit {
       this.sources = data;
     },
       (err: string) => {
-        alert(err);
+        console.error(err);
       });
   }
 
