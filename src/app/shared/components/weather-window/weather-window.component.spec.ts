@@ -1,10 +1,12 @@
-import { async, ComponentFixture, TestBed, inject } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { WeatherWindowComponent } from './weather-window.component';
 import { HttpClient, HttpHandler } from '@angular/common/http';
+import { of } from 'rxjs';
+
+import { WeatherWindowComponent } from './weather-window.component';
 import { WeatherService } from '../../services/weather.service';
-import { from, of, throwError, EMPTY } from 'rxjs';
 import { Weather } from '../../models/weather';
+
 
 describe('WeatherWindowComponent', () => {
   let weatherWindowComponent: WeatherWindowComponent;
@@ -134,12 +136,5 @@ describe('WeatherWindowComponent', () => {
     expect(serviceSpy).toHaveBeenCalled();
     expect(weatherWindowComponent.weather).toBeTruthy();
     expect(windDirMethodSpy).toHaveBeenCalled();
-  });
-
-  it(`getWeather function should print in console with console.error message if
-  an error is thrown`, () => {
-    const serviceSpy = spyOn(weatherService, 'getWeather').and.throwError('error message');
-    expect(serviceSpy).toThrowError();
-    expect(weatherWindowComponent.weather).toBeFalsy();
   });
 });
