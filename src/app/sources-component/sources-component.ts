@@ -13,7 +13,7 @@ export class SourcesComponent implements OnInit {
 
   sources: Source[];
 
-  constructor(private http: HttpClient, private sourceNewsService: SourceNewsService,
+  constructor(private sourceNewsService: SourceNewsService,
     @Inject(DOCUMENT) private document: any) { }
 
   ngOnInit() {

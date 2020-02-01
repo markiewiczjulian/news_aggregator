@@ -1,11 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { HttpClient, HttpHandler } from '@angular/common/http';
+import { of } from 'rxjs';
 
 import { SourcesComponent } from './sources-component';
-import { of } from 'rxjs';
 import { SourceNewsService } from '../shared/services/source-news.service';
-import { SourceResponse } from '../shared/models/sourceResponse';
 import { Source } from '../shared/models/source';
 
 describe('SourcesComponent', () => {
@@ -34,7 +33,7 @@ describe('SourcesComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(SourcesComponent);
     sourcesComponent = fixture.componentInstance;
-    sourcesService = TestBed.get(SourceNewsService)
+    sourcesService = TestBed.get(SourceNewsService);
     fixture.detectChanges();
   });
 
@@ -44,7 +43,7 @@ describe('SourcesComponent', () => {
 
   it(`method getAllSources should call sourcesService and assign retrieved data to
   sources variable`, () => {
-    let spy = spyOn(sourcesService, 'getAll').and.returnValue(of(source));
+    const spy = spyOn(sourcesService, 'getAll').and.returnValue(of(source));
     sourcesComponent.getAllSources();
     expect(spy).toHaveBeenCalled();
     expect(sourcesComponent.sources).toBeTruthy();
