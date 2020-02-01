@@ -1,4 +1,4 @@
-<div class="mx-1 mx-md-3 mx-lg-5 px-5 my-4">
+<div class="mx-1 mx-md-3 mx-lg-5 px-1 px-md-5 my-4">
   <table *ngIf="sources" class="table table-hover">
     <thead>
       <tr>
@@ -18,10 +18,7 @@
         <td>{{ source.category }}</td>
         <td>{{ source.language }}</td>
         <td>
-          <button
-            class="btn btn-info"
-            (click)="redirectToSourceSite(source.url)"
-          >
+          <button class="btn btn-info" (click)="redirectToSourceSite(source.url)">
             website
           </button>
         </td>
